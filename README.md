@@ -14,3 +14,9 @@ php -S localhost:8000
 // > JS
 Para comentar, todas são provenientes da linguagem C!
 (Linguagem C --> C#,PHP, JAVA, JS e AS)
+
+TODA VARIAVEL EM PHP TEM CIFRÃO $
+
+<?php
+$name= 'Carlos Ferreira';
+?>
