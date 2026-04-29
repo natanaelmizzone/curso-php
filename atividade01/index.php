@@ -22,6 +22,12 @@
     ?>
 
     <div class="galeria">
+
+    <?php
+        for ($i = 0, $total = count($arrMulheres); $i < $total; $i++) {
+    
+    
+?>
         <div class="item">
             <img src="<?php echo $arrMulheres[0][1];?>"/> 
             <h3><?php echo $arrMulheres[0][0];?></h3>
@@ -47,7 +53,7 @@
             <h3><?php echo $arrMulheres[4][0];?></h3>
             <p><?php echo $arrMulheres[4][2];?></p>
         </div>
-        
+        <?php }?>
     </div>
 
     
