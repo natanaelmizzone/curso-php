@@ -16,8 +16,8 @@
         ['Ada Lovelace', '../IMG/ada-lovelace.webp', 'Ada Lovelace foi uma matemática inglesa do século XIX, considerada a primeira programadora da história. Trabalhou na máquina analítica de Charles Babbage e criou o primeiro algoritmo. Sua visão antecipou o uso dos computadores além de cálculos, incluindo música e arte.'],
         ['Grace Hopper', '../IMG/grace-hopper.webp', 'Grace Hopper foi uma cientista da computação e almirante da Marinha dos EUA. Criou o primeiro compilador e ajudou no desenvolvimento do COBOL. Foi responsável por popularizar o termo “bug” na computação e revolucionou a programação moderna.'],
         ['Dorothy Vaughan', '../IMG/dorothy-vaughan.png', 'Dorothy Vaughan foi uma matemática e programadora da NASA, pioneira entre mulheres negras na tecnologia. Especialista em FORTRAN, liderou equipes no cálculo aeroespacial e contribuiu para missões espaciais importantes, quebrando barreiras raciais e de gênero.'],
-        ['Marissa Mayer', '../IMGmarisa-mayer1.png', 'Marissa Mayer é uma engenheira e executiva de tecnologia, uma das primeiras funcionárias do Google. Teve papel importante no desenvolvimento de produtos como busca e Gmail, e depois atuou como CEO do Yahoo, influenciando estratégias digitais globais.'],
-        ['Margareth Hamilton', 'margareth-halmilton.webp', 'Margaret Hamilton é uma cientista da computação que liderou o desenvolvimento do software de navegação do programa Apollo. Seu trabalho foi essencial para o pouso na Lua e ajudou a consolidar a engenharia de software como área.']
+        ['Marissa Mayer', '../IMG/marissa-mayer1.png', 'Marissa Mayer é uma engenheira e executiva de tecnologia, uma das primeiras funcionárias do Google. Teve papel importante no desenvolvimento de produtos como busca e Gmail, e depois atuou como CEO do Yahoo, influenciando estratégias digitais globais.'],
+        ['Margareth Hamilton', '../IMG/margareth-hamilton.webp', 'Margaret Hamilton é uma cientista da computação que liderou o desenvolvimento do software de navegação do programa Apollo. Seu trabalho foi essencial para o pouso na Lua e ajudou a consolidar a engenharia de software como área.']
     ]
     ?>
 
