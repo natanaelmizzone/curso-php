@@ -9,11 +9,13 @@ php -S localhost:8000
 
 ```
 
+``
 // > C#
 // > PHP
 // > JS
 Para comentar, todas são provenientes da linguagem C!
 (Linguagem C --> C#,PHP, JAVA, JS e AS)
+``
 
 VARIÁVEL EM PHP TEM CIFRÃO $
 
@@ -46,3 +48,8 @@ Operadores lógicos
 || ou
 !  não
 ``
+
+REALIZAÇÃO DE PÁGINA LOGIN:
+
+- Prática da aula 06/05 e 11/05 realizamos a página d elogin, administrativo e validações para o login.
+
