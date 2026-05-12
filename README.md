@@ -17,17 +17,21 @@ Para comentar, todas são provenientes da linguagem C!
 
 VARIÁVEL EM PHP TEM CIFRÃO $
 
+``
 <?php
 $name= 'Carlos Ferreira';
 ?>
-
+``
+``
 Operadores Aritméticos
 + soma
 - subtrai
 / divide
 * multiplica
 % resto
+``
 
+``
 Operadores Relacionais
 > maior
 < menor
@@ -35,8 +39,10 @@ Operadores Relacionais
 <= menor igual
 == igual
 != diferente
-
+``
+``
 Operadores lógicos
 && e
 || ou
 !  não
+``
