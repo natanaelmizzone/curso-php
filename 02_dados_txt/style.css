@@ -1,0 +1,23 @@
+.container{
+    width: 300px;             
+    margin: 0 auto;           
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+    
+}
+.titulo_form{
+    justify-content: center;
+    text-align: center;
+    color: blue;
+}
+.sub_titulo{
+    color: orange;  
+}
+.campo_label{
+
+    display: flex;
+    flex-direction: column;
+    padding: 1px;
+}
