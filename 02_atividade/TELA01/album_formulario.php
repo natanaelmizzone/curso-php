@@ -25,5 +25,14 @@
 
     </form>
 
+    <hr>
+    <h2>Listagem de albuns</h2>
+    <?php 
+    $arquivo = "album_db.txt";
+    $arquivo_aberto = fopen($arquivo, "r");
+    $conteudo = fread($arquivo_aberto , filesize($arquivo));
+    echo $conteudo;
+    fclose($arquivo_aberto);
+    ?>
 </body>
 </html>
