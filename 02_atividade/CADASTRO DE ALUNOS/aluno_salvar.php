@@ -6,5 +6,5 @@ $idade = $_POST['idade'];
 $arquivo = fopen("aluno_db.txt","a");
 fwrite($arquivo, "$ra \t $nome $idade \n ");
 fclose($arquivo); 
-
+header('location: aluno_formulario.php');
 ?>

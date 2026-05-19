@@ -31,6 +31,15 @@
 
 </form>
 
+    <?php
+    $arquivo = fopen("eventos_db.txt", "r");
+    while(!feof($arquivo)){
+        $linha = fgets($arquivo);
+        echo "$linha<br>";
+        
+    }
+    fclose($arquivo);
+    ?>
 
 </body>
 </html>

@@ -25,14 +25,28 @@
 
     </form>
 
-    <hr>
+    <!--- <hr>
     <h2>Listagem de albuns</h2>
-    <?php 
+    <?php /*
     $arquivo = "album_db.txt";
-    $arquivo_aberto = fopen($arquivo, "r");
+    $arquivo_aberto = fopen($arquivo, "r");s
     $conteudo = fread($arquivo_aberto , filesize($arquivo));
     echo $conteudo;
-    fclose($arquivo_aberto);
+    fclose($arquivo_aberto);*/
+    ?>-->
+
+
+    <hr>
+    <h2>Listagem de albúns</h2>
+    <?php
+    $arquivo = fopen("album_db.txt","r");
+    while(!feof($arquivo)){
+        $linha = fgets($arquivo);
+        echo "$linha <br>";
+    }
+    fclose($arquivo);
     ?>
+
+
 </body>
 </html>

@@ -10,7 +10,7 @@
     
     <h1>Cadastro de Alunos</h1>
 
-    <form action="02_atividade/tela02/aluno_salvar.php" method="post">
+    <form action="aluno_salvar.php" method="post">
 
     <label>RA</label>
     <input type="number" name="ra">
@@ -26,5 +26,14 @@
 
     </form>
 
+    <?php
+    $arquivo = fopen("aluno_db.txt", "r");
+    while(!feof($arquivo)){
+        $linha = fgets($arquivo);
+        echo "$linha<br>";
+        
+    }
+    fclose($arquivo);
+    ?>
 </body>
 </html>
