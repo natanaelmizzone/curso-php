@@ -1,3 +1,4 @@
+/*
 .categoria{
     display: flex;
     flex-wrap: wrap;
@@ -9,7 +10,7 @@
 .produtos{
     background: white;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 250px;
     width: 200px;               
     display: flex;
     flex-direction: column;     
@@ -18,3 +19,4 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.2s ease;
 }
+/*
