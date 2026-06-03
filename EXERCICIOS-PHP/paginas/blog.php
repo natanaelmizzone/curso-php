@@ -18,8 +18,6 @@
     <div>
         <h1>blog</h1>
     </div>
-    <footer>
-        rodape
-    </footer>
+    
 </body>
 </html>
