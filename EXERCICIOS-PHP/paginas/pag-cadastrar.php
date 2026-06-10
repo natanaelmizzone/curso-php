@@ -1,32 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-  <?php include "inc-head.php" ?>
-  <?php include "inc-menu.php" ?>
-  <?php include "inc-carrousel.php" ?>
-  <?php include "inc-categoria.php" ?>
-  <main>
-  <h1>login</h1>
 
-  <!--- METHOD="post" defini como será utilizada as informções, seja POST, GET ou SET --->
 
-    <form action="pag-validarlogin.php" method="post">
+<main>
+    <div>
+        <h1>CADASTRO CLIENTE</h1>
 
-   <!--- Utiliza-se do type para definir qual vriave irei chamar --->
- 
-        
-        <label>E-mail: </label>
-        <input type="email" name="email"><br>
-        <label>Senha:</label>
-        <input type="password" name="senha"><br>
-        <button type="submit">Acessar</button> 
+        <!-- Envia os dados para a página pag-salvar.php -->
+        <form action="pag-salvar.php" method="post">
+     
+            <label>Nome:</label>
+            <input type="text" name="nome" required><br>
+            
+            <label>CPF/CNPJ:</label>
+            <!-- Mudado para text para não sumir com o zero à esquerda -->
+            <input type="text" name="cpf" required><br>
+            
+            <label>Endereço:</label>
+            <input type="text" name="endereco" required><br>
+            
+            <label>Telefone:</label>
+            <!-- Mudado para text para aceitar parênteses e traços -->
+            <input type="text" name="telefone" required><br>
+            
+            <label>E-mail: </label>
+            <input type="email" name="email" required><br>
+            
+            <label>Senha:</label>
+            <input type="password" name="senha" required><br>
+            
+            <button type="submit" class="btn btn-success me-2">Enviar</button>
+            <button type="reset" class="btn btn-danger me-2 mt-2">Limpar</button>
+        </form>
 
-        <button type="reset">Limpar</button>
-    </form>
-    <?php
-        echo $_GET ['mensagem']??"";
-        //Faz a chamada, ou seja o GET é a entrada de informação para a página caso de um erro ou um aviso nescessario//
+        <?php
+            // Exibe mensagens de sucesso ou erro vindas do arquivo pag-salvar.php
+            if (isset($_GET['mensagem'])) {
+                echo '<p style="color: blue; margin-top: 10px;">' . htmlspecialchars($_GET['mensagem']) . '</p>';
+            }
+        ?>
+    </div>
+</main>
 
-    ?>
-    </main>
-    <?php include "inc-rodape.php" ?>
-    </html>

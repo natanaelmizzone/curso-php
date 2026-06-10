@@ -1,6 +1,5 @@
-
-    <header>
-        <nav class="navbar navbar-expand-lg shadow-sm">
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg shadow-sm bg-white">
             <div class="container container-fluid">
                 <a class="logo navbar-brand" href="#"><img src="./src/img/transparent_png/cropped-Valeretto-Logo.png"
                         alt=""></a>
@@ -11,40 +10,50 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="ms-auto navbar-nav fs-5 fw-semibold">
+                    <ul class="ms-auto navbar-nav fs-5 fw-inter-semibold gap-2">
                         <li class="nav-item dropdown text">
-                            <a class="nav-link dropdown-toggle text-orange" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle link-dark-gray" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Produtos
                             </a>
-                            <ul class="dropdown-menu border-0 fs-5 fw-medium">
-                                <li><a class="dropdown-item hover-orange" href="#">Aquecedor a Gás</a></li>
-                                <li><a class="dropdown-item hover-orange" href="#">Aquecedor Solar</a></li>
-                                <li><a class="dropdown-item hover-orange" href="#">Aquecedor Solar de Piscina</a></li>
-                                <li><a class="dropdown-item hover-orange" href="#">Iluminação de Piscina</a></li>
-                                <li><a class="dropdown-item hover-orange" href="#">Pressurizadoras</a></li>
+                            <ul class="dropdown-menu border-0 shadow-sm fs-6">
+                                <li><a class="dropdown-item hover-orange fw-inter-medium" href="#">Aquecedor a Gás</a></li>
+                                <li><a class="dropdown-item hover-orange fw-inter-medium" href="#">Aquecedor Solar</a></li>
+                                <li><a class="dropdown-item hover-orange fw-inter-medium" href="#">Aquecedor Solar de Piscina</a></li>
+                                <li><a class="dropdown-item hover-orange fw-inter-medium" href="#">Iluminação de Piscina</a></li>
+                                <li><a class="dropdown-item hover-orange fw-inter-medium" href="#">Pressurizadoras</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-orange" aria-current="page" href="#">Nossa História</a>
+                            <a class="nav-link link-dark-gray" aria-current="page" href="#">Nossa História</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-orange" href="#">Blog</a>
+                            <a class="nav-link link-dark-gray" href="#">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-orange" href="#">Contato</a>
+                            <a class="nav-link link-dark-gray" href="#">Contato</a>
                         </li>
                     </ul>
-                    <div class="login-box d-flex align-items-center gap-1 ms-auto">
-                <img class="login-icon" width="32" height="32" src="https://img.icons8.com/pastel-glyph/32/ec9744/user-male-circle.png" alt="user-male-circle"/>
-                <div class="login-text">
+                    <ul class="ms-auto navbar-nav fs-6 fw-inter-semibold">
+                    <li class="nav-item dropdown text">
+                        <div class="d-flex align-items-center gap-1 ms-auto">
+                        <img class="login-icon me-1" width="38" height="38" src="https://img.icons8.com/pastel-glyph/38/ec9744/user-male-circle.png" alt="user-male-circle"/>
+                        
+                            <div class="d-flex align-items-center">
+                <?php if (isset($_SESSION['id_cliente'])): ?>
+                    <!-- Caso o usuário ESTEJA LOGADO -->
+                    <span class="navbar-text me-3">
+                        Olá, <strong><?php echo htmlspecialchars($_SESSION['nome_cliente']); ?></strong>!
+                    </span>
+                    <a href="pag-sair.php" class="btn btn-outline-danger btn-sm">Sair</a>
+                <?php else: ?>
+                    <!-- Caso o usuário NÃO ESTEJA LOGADO -->
+                    <a href="pag-login.php" class="btn btn-primary btn-sm me-2">Entrar</a>
+                    <a href="pag-cadastro.php" class="btn btn-outline-secondary btn-sm">Cadastrar</a>
+                <?php endif; ?>
 
-                    <a href="<?php include "pag-validarlogin.php"?>"><b>Entre</b></a>
-                    ou
-                    <br>
-                    <a href="<?php include "pag-validarlogin.php"?>"><b>Cadastre-se</b></a>
-                </div>
-            </div>
+                            </div>
+                    </ul>
                 </div>
             </div>
         </nav>

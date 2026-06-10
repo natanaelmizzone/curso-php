@@ -10,7 +10,7 @@
     <div class="container">
     <h1 class="titulo_form">Cadastro de Clientes</h1>
        
-        <form action="valeretto_salvar.php" method="post">
+        <form action="pag-salvar.php" method="post">
             <div class="campo_label">
             <label>Nome:</label>
             <input type="text" name="nome"><br><br>
@@ -19,7 +19,7 @@
             <input type="number" name="idade"><br><br>
             
             <label>Telefone:</label>
-            <input type="text" name="telefone"><br><br>
+            <input type="number" name="telefone"><br><br>
             
             <label>Endereço:</label>
             <input type="text" name="endereco"><br><br>
@@ -39,6 +39,35 @@
             <button type="reset">Limpar</button>
             </div>
         </form>
+                        <?php 
+                #abrir conexão
+                include "inc-conexao.php";
+
+                #consultar os dados
+                $sql = "select * from tb_vallereto order by artista, ano";
+                $resultado = mysqli_query($conexao, $sql);
+
+                #listar os dados
+                while($linha_resultado = mysqli_fetch_assoc($resultado)){
+                    echo "<tr>";
+                    echo "<td> {$linha_resultado['id']} </td>";
+                    echo "<td> {$linha_resultado['artista']} </td>";
+
+                    echo "<td> <a href='discografia-visualizar.php?id={$linha_resultado['id']}'> {$linha_resultado['nome']} </a> </td>";
+
+                    echo "<td> {$linha_resultado['ano']} </td>";
+                    echo "<td> {$linha_resultado['tipo']} </td>";
+                    echo "<td> <a href='discografia-excluir.php?id={$linha_resultado['id']}'>Excluir</a> 
+
+                                <a href='discografia-editar.php?id={$linha_resultado['id']}'>Editar</a>
+                    </td>";
+
+                    echo "</tr>";
+                }
+
+                #fechar conexão
+                mysqli_close($conexao);
+                ?>
 
     </div>
 </body>

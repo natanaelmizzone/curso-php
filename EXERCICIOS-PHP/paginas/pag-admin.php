@@ -1,15 +1,13 @@
-<?php
-// OBRIGATÓRIO: Inicia a sessão para o site saber que você logou
-session_start();
-?>
 <?php include "inc-cabecalho.php" ?>
 <?php include "inc-menu.php" ?>
 <?php include "inc-carrousel.php" ?>
 <?php include "inc-categoria.php" ?>
 
 <main>
-    <!-- Seu conteúdo aqui -->
-</main>
 
+<p>DEU CERTO MEU IRMÃO<p>
+
+</main>
 <?php include "inc-categoria-rodape.php" ?>
+
 <?php include "inc-rodape.php" ?>
