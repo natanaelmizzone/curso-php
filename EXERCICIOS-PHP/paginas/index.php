@@ -2,14 +2,340 @@
 // OBRIGATÓRIO: Inicia a sessão para o site saber que você logou
 session_start();
 ?>
-<?php include "inc-cabecalho.php" ?>
-<?php include "inc-menu.php" ?>
-<?php include "inc-carrousel.php" ?>
-<?php include "inc-categoria.php" ?>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<main>
-    <!-- Seu conteúdo aqui -->
-</main>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valeretto Aquecedores - Valeretto</title>
+    <link rel="stylesheet" href="./src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="icon" href="./src/img/transparent_png/cropped-Valeretto-favicon-192x192.png" sizes="192x192">
+</head>
 
-<?php include "inc-categoria-rodape.php" ?>
-<?php include "inc-rodape.php" ?>
+<body>
+
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg shadow-sm bg-white">
+            <div class="container container-fluid">
+                <a class="logo navbar-brand" href="#"><img src="./src/img/transparent_png/cropped-Valeretto-Logo.png"
+                        alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="ms-auto navbar-nav fs-5 fw-inter-semibold gap-2">
+                        <li class="nav-item dropdown text">
+                            <a class="nav-link dropdown-toggle link-dark-gray" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Produtos
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-sm fs-6">
+                                <li><a class="dropdown-item hover-orange fw-inter-medium" href="#">Aquecedor a Gás</a></li>
+                                <li><a class="dropdown-item hover-orange fw-inter-medium" href="#">Aquecedor Solar</a></li>
+                                <li><a class="dropdown-item hover-orange fw-inter-medium" href="#">Aquecedor Solar de Piscina</a></li>
+                                <li><a class="dropdown-item hover-orange fw-inter-medium" href="#">Iluminação de Piscina</a></li>
+                                <li><a class="dropdown-item hover-orange fw-inter-medium" href="#">Pressurizadoras</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-dark-gray" aria-current="page" href="#">Nossa História</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-dark-gray" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-dark-gray" href="#">Contato</a>
+                        </li>
+                    </ul>
+                    <ul class="ms-auto navbar-nav fs-6 fw-inter-semibold">
+                    <li class="nav-item dropdown text">
+                        <div class="d-flex align-items-center gap-1 ms-auto">
+                        <img class="login-icon me-1" width="38" height="38" src="https://img.icons8.com/pastel-glyph/38/ec9744/user-male-circle.png" alt="user-male-circle"/>
+                        
+                        <div class="d-flex align-items-center">
+                <?php if (isset($_SESSION['id_cliente'])): ?>
+                    <!-- Caso o usuário ESTEJA LOGADO -->
+                    <span class="navbar-text me-3">
+                        Olá, <strong><?php echo htmlspecialchars($_SESSION['nome_cliente']); ?></strong>!
+                    </span>
+                    <a href="pag-sair.php" class="btn btn-outline-danger btn-sm">Sair</a>
+                <?php else: ?>
+                    <!-- Caso o usuário NÃO ESTEJA LOGADO -->
+                    <a href="pag-login.php" class="btn btn-primary btn-sm me-2">Entrar</a>
+                    <a href="pag-cadastro.php" class="btn btn-outline-secondary btn-sm">Cadastrar</a>
+                <?php endif; ?>
+
+                            </div>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="carouselExampleIndicators" class="carousel slide container my-2">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="./src/img/Piscina_iluminada_resort.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="./src/img/piscina_iluminada_panoramica.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="./src/img/piscina_aquecida_panoramica.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+        </div>
+
+<!-------------------------------------------- Categorias de Produtos-------------------------------------------->
+
+              <div
+        class="container row-cols-5 d-flex align-content-center justify-content-center"
+      >
+        <div class="col">
+            
+          <img
+            src="./src/img/CATEGORIA.png"
+            alt="Catergoria-1"
+          />
+        <a class="dropdown-item hover-orange fw-inter-medium" href="#">Aquecedor a Gás</a>
+
+        </div>
+
+        <div class="col">
+
+          <img
+            src="./src/img/CATEGORIA.png"
+            alt="Catergoria-2"
+          />
+        <a class="dropdown-item hover-orange fw-inter-medium" href="#">Aquecedor a Gás</a>            
+        </div>
+
+        <div class="col">
+
+          <img
+            src="./src/img/CATEGORIA.png"
+            alt="Catergoria-3"
+          />
+        <a class="dropdown-item hover-orange fw-inter-medium" href="#">Aquecedor a Gás</a>           
+        </div>
+
+
+        <div class="col">
+
+          <img
+            src="./src/img/CATEGORIA.png"
+            alt="Catergoria-4"
+          />
+        <a class="dropdown-item hover-orange fw-inter-medium" href="#">Aquecedor a Gás</a>
+        </div>
+
+        <div class="col">
+
+          <img
+            src="./src/img/CATEGORIA.png" href="#"
+            alt="Catergoria-5"
+          />
+        <a class="dropdown-item hover-orange fw-inter-medium d-flex justify-content text-align-center" href="#">Aquecedor a Gás</a>        
+        </div>
+
+      </div>
+      <div class="container my-5">
+    <h2 class="text-center mb-4">Nossos Produtos</h2>
+    <div class="row g-4">
+        <?php
+        include "inc-conexao.php";
+
+        // Busca todos os produtos ativos do banco (ajuste o nome da tabela/colunas se necessário)
+        $sql = "SELECT * FROM tb_produto";
+        $resultado = mysqli_query($conexao, $sql);
+
+        if ($resultado && mysqli_num_rows($resultado) > 0) {
+            while ($produto = mysqli_fetch_assoc($resultado)) {
+                // Formata o preço para o padrão de moeda brasileiro (R$)
+                $precoFormatado = number_format($produto['preco_produto'], 2, ',', '.');
+                ?>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/produtos/<?php echo htmlspecialchars($produto['imagem_produto']); ?>" class="card-img-top p-3" alt="<?php echo htmlspecialchars($produto['nome_produto']); ?>" style="height: 200px; object-fit: contain;">
+                        <div class="card-body d-flex flex-column text-center">
+                            <h5 class="card-title text-dark"><?php echo htmlspecialchars($produto['nome_produto']); ?></h5>
+                            <p class="card-text text-muted small flex-grow-1"><?php echo htmlspecialchars($produto['descricao_produto']); ?></p>
+                            <h4 class="text-success mb-3">R$ <?php echo $precoFormatado; ?></h4>
+                            <a href="pag-detalheproduto.php?id=<?php echo $produto['id_produto']; ?>" class="btn btn-primary w-100">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <?php
+            }
+        } else {
+            echo '<div class="col-12 text-center"><p class="text-muted">Nenhum produto encontrado no momento.</p></div>';
+        }
+
+        mysqli_close($conexao);
+        ?>
+    </div>
+                </div>
+
+<!-------------------------------------------- Depoimentos dos Clientes-------------------------------------------->
+        <section class="testimonial-carousel container py-5">
+            <h4 class="text-center text-uppercase fw-inter-bold"><span class="text-orange">nossos</span> clientes</h4>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row p-3">
+                            <div class="col-md-6">
+                                <div class="card-body text-center p-5 border-1 rounded-2 shadow">
+                                    <div><i class="bi bi-quote fs-1 text-orange"></i></div>
+                                    <p>"As soluções apresentadas pela Valeretto Aquecedores sempre com muito conhecimento técnico e produtos de alto desempenho. Nos passa muita confiança no momento de fechar um contrato."</p>
+                                    <div class="d-flex flex-column">
+                                        <span>Rodrigo Marzochi</span>
+                                        <span class="text-orange">Topo Arquitetura e Engenharia</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body text-center p-5 border-1 rounded-2 shadow">
+                                    <div><i class="bi bi-quote fs-1 text-orange"></i></div>
+                                    <p>"Tive ótimas orientações na compra e a instalação foi feita por técnicos muito qualificados. O pós-venda é super prestativo. Já indiquei a familiares e amigos, que também estão muito satisfeitos."</p>
+                                    <div class="d-flex flex-column">
+                                        <span>Waldemar Castanharo</span>
+                                        <spanc class="text-orange">Cliente desde 2000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row p-3">
+                            <div class="col-md-6">
+                                <div class="card-body text-center p-5 border-1 rounded-2 shadow">
+                                    <div><i class="bi bi-quote fs-1 text-orange"></i></div>
+                                    <p>"Agilidade no atendimento e alta qualidade dos produtos e serviços, esses são os principais motivos que trabalhamos com Valeretto Aquecedores. Sempre prontos para nos auxiliar."</p>
+                                    <div class="d-flex flex-column">
+                                        <span>Guilherme Volpi</span>
+                                        <span class="text-orange">Engenheiro Civil</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body text-center p-5 border-1 rounded-2 shadow">
+                                    <div><i class="bi bi-quote fs-1 text-orange"></i></div>
+                                    <p> "A Valeretto Aquecedores sempre me atendeu com muito profissionalismo e rapidez. Equipe séria e honesta. A equipe do pós venda é excelente, sempre me atenderam com prontidão."</p>
+                                    <div class="d-flex flex-column">
+                                        <span>Karina Sangalli</span>
+                                        <span class="text-orange">Cliente: sistema de aquecimento solar</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+                </div>
+            </div>    
+        </section>
+
+        <section class="logos container py-4">
+            <h4 class="text-center mb-5 fw-inter-bold text-uppercase">As Melhores <span class="text-orange">Marcas</span></h4>
+            <div class="logos-slide">
+                <img src="./src/img/transparent_png/Logo_Atual_Aquecedores.png" alt="Logo_Atual_Aquecedores">
+                <img src="./src/img/transparent_png/Logo_Heliotek-1.png" alt="Logo_Heliotek">
+                <img src="./src/img/transparent_png/Logo_Jacuzzi.png" alt="Logo_Jacuzzi">
+                <img src="./src/img/transparent_png/Logo_MegraPress_.png" alt="Logo_MegraPress">
+                <img src="./src/img/transparent_png/Logo_Mont-Serrat.png" alt="Logo_Mont-Serrat">
+                <img src="./src/img/transparent_png/Logo_Orbitec.png" alt="Logo_Orbitec">
+                <img src="./src/img/transparent_png/Logo_Rinnai.png" alt="Logo_Rinnai">
+                <img src="./src/img/transparent_png/Logo_Rowa.png" alt="Logo_Rowa">
+                <img src="./src/img/transparent_png/Logo_Schnelder.png" alt="Logo_Schnelder">
+            </div>
+        </section>
+
+        <a target="_blank" href="https://api.whatsapp.com/send?phone=5519996294625&text=Ol%C3%A1!%20Gostaria%20de%20saber%20sobre%20aquecedores."
+            class="wpp-icon position-fixed text-white rounded-circle d-flex text-center align-items-center justify-content-center shadow-lg fs-2">
+        <i class="bi bi-whatsapp"></i></a>
+
+    </main>
+
+    <footer class="pt-5 pb-4 mt-5 bg-dark-gray">
+        <div class="container">
+            <div class="row ali">
+                <div class="col-lg-7 text-white mb-5 fs-7">
+                    <h4 class="fw-inter-semibold text-orange">Valeretto Aquecedores</h4>
+                    
+                    <p class="text-white mt-3 mb-4 fw-inter-regular w-75">há mais de 19 anos oferecendo soluções tecnológicas e sustentáveis de alta performance para aquecimento de água.</p>
+
+                    <div>
+                        <div>
+                            <i class="bi bi-envelope-at-fill me-2 hover-orange"></i>valeretto@valeretto.com.br
+                        </div>
+                        <div>
+                            <i class="bi bi-whatsapp me-2 hover-orange"></i>(19) 9 9629-4625
+                        </div>
+                        <div>
+                            <i class="bi bi-telephone-forward-fill me-2 hover-orange"></i>(19) 3405 9681
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 mb-3 fs-7">
+                    <h5 class="text-white fw-inter-semibold mb-4">Produtos</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-1">
+                        <li><a class="text-decoration-none link-orange" href="#">Aquecedor a Gás</a></li>
+                        <li><a class="text-decoration-none link-orange" href="#">Aquecedor Solar</a></li>
+                        <li><a class="text-decoration-none link-orange" href="#">Aquecedor Solar de Piscina</a></li>
+                        <li><a class="text-decoration-none link-orange" href="#">Iluminação de Piscina</a></li>
+                        <li><a class="text-decoration-none link-orange" href="#">Pressurizadoras</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 mb-3 fs-7">
+                    <h5 class="text-white fw-inter-semibold mb-4">Navegação</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-1 text-white">
+                        <li><a class="text-decoration-none link-orange" href="#">Nossa História</a></li>
+                        <li><a class="text-decoration-none link-orange" href="#">Contato</a></li>
+                        <li><a class="text-decoration-none link-orange" href="#">FAQ</a></li>
+                        <li><a class="text-decoration-none link-orange" href="#">Blog</a></li>
+                    </ul>
+
+                    <ul class="list-unstyled d-flex flex-column gap-1 text-white">
+                        <li><a class="text-decoration-none link-orange" href="#">Site do Mapa</a></li>
+                        <li><a class="text-decoration-none link-orange" href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="text-white text-center mt-3">
+                Copyright © 2026 – Valeretto Aquecedores e Acessórios
+            </div>
+        </div>
+    </footer>
+
+    <script src="./src/js/bootstrap.bundle.min.js"></script>
+    <script src="./src/js/script.js"></script>
+</body>
+
+</html>

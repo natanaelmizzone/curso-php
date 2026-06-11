@@ -1,3 +1,7 @@
+<?php
+// OBRIGATÓRIO: Inicia a sessão para o site saber que você logou
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
