@@ -2,7 +2,7 @@
         <nav class="navbar navbar-expand-lg shadow-sm bg-white">
             <div class="container container-fluid">
                 <a class="logo navbar-brand" href="#"><img src="./src/img/transparent_png/cropped-Valeretto-Logo.png"
-                        alt=""></a>
+                        alt="Valeretto"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -34,8 +34,7 @@
                             <a class="nav-link link-dark-gray" href="#">Contato</a>
                         </li>
                     </ul>
-                    <ul class="ms-auto navbar-nav fs-6 fw-inter-semibold">
-                    <li class="nav-item dropdown text">
+
                         <div class="d-flex align-items-center gap-1 ms-auto">
                         <img class="login-icon me-1" width="38" height="38" src="https://img.icons8.com/pastel-glyph/38/ec9744/user-male-circle.png" alt="user-male-circle"/>
                         
@@ -49,7 +48,7 @@
                 <?php else: ?>
                     <!-- Caso o usuário NÃO ESTEJA LOGADO -->
                     <a href="pag-login.php" class="btn btn-primary btn-sm me-2">Entrar</a>
-                    <a href="pag-cadastro.php" class="btn btn-outline-secondary btn-sm">Cadastrar</a>
+                    <a href="pag-cadastrar.php" class="btn btn-outline-secondary btn-sm">Cadastrar</a>
                 <?php endif; ?>
 
                             </div>

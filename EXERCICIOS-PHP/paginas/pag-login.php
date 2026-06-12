@@ -1,7 +1,6 @@
 <?php include "inc-cabecalho.php" ?>
 <?php include "inc-menu.php" ?>
-<?php include "inc-carrousel.php" ?>
-<?php include "inc-categoria.php" ?>
+
 
 <div class=" d-flex flex-column text-center mx-5 my-5 p-5 border-1 rounded-6 shadow d-flex flex-column align-items-center">
 <div class="text-center mx-5 my-5 p-5 border-1 rounded-2 shadow d-flex flex-column align-items-center">

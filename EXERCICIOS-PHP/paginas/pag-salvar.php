@@ -7,7 +7,6 @@ $telefone = $_POST['telefone'] ?? '';
 $email    = $_POST['email'] ?? '';
 $senha    = $_POST['senha'] ?? '';
 
-// Segurança 1: Criptografa a senha usando o algoritmo padrão e seguro do PHP (BCRYPT)
 $senhaCriptografada = password_hash($senha, PASSWORD_DEFAULT);
 
 include "inc-conexao.php";
@@ -18,12 +17,12 @@ $sql = "INSERT INTO tb_cliente (nome_cliente, cpf_cnpj_cliente, endereco, telefo
 $stmt = mysqli_prepare($conexao, $sql);
 
 if ($stmt) {
-    // Passamos a $senhaCriptografada no lugar da senha em texto limpo
+
     mysqli_stmt_bind_param($stmt, "ssssss", $nome, $cpf, $endereco, $telefone, $email, $senhaCriptografada);
 
     $resultado = mysqli_stmt_execute($stmt);
 
-    // Fechamos o statement ANTES de redirecionar ou encerrar o script
+
     mysqli_stmt_close($stmt);
 
     if ($resultado) {
@@ -34,7 +33,7 @@ if ($stmt) {
         exit();
     }
 } else {
-    // Em produção, mude isso para uma mensagem genérica para não expor detalhes do banco
+
     echo "Erro na preparação do banco de dados: " . mysqli_error($conexao);
 }
 
